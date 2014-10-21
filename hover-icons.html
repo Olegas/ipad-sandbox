@@ -48,6 +48,10 @@
           left: o.left + w - $('.row-options').width()
         });
       });
+      
+      $('.row-options').delegate('.row-icon', 'click', function() {
+        console.log(this.innerHTML);
+      })
     });
   </script>
 </html>
