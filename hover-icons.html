@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src="://cdn.sbis.ru/jquery/1.6.4/jquery-full.js" />
+  </head>
+  <style>
+    .row-options {
+      position: absolute;
+    }
+    
+    .row-icon:hover {
+      color: red;
+    }
+  </style>
+  <body>
+    <div class="row-options">
+      <div class="row-item">
+        <span class="row-icon">Z</span>
+      </div>
+    </div>
+    
+    <table>
+      <tr>
+        <td>Text</td>
+        <td>Text</td>
+      </tr>
+      <tr>
+        <td>Text</td>
+        <td>Text</td>
+      </tr>
+      <tr>
+        <td>Text</td>
+        <td>Text</td>
+      </tr>
+    </table>
+  </body>
+  <script>
+    $(function(){
+      $('table').delegate('tr', 'mouseenter', function() {
+        var o = $(this).offset();
+        var w = $(this).width();
+        $('.row-options').offset({
+          top: o.top;
+          left: o.left + w - $('.row-options').width()
+        });
+    });
+  </script>
+</html>
