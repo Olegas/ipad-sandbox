@@ -5,6 +5,7 @@
   <style>
     .row-options {
       position: absolute;
+      display: none;
     }
     
     .row-icon:hover {
@@ -38,7 +39,7 @@
       $('table').delegate('tr', 'mouseenter', function() {
         var o = $(this).offset();
         var w = $(this).width();
-        $('.row-options').offset({
+        $('.row-options').show().offset({
           top: o.top;
           left: o.left + w - $('.row-options').width()
         });
